@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block head%}
+    <title>Flask Market | Register</title>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <form method="POST" class="form-register" style="color:white">
+            {{ form.hidden_tag() }}
+            <h1 class="h3 mb-3 mt-3 font-weight-normal">Create an Account</h1>
+
+            {{ form.username.label() }}
+            {{ form.username(class="form-control", placeholder="Username")}}
+
+            {{ form.email_address.label() }}
+            {{ form.email_address(class="form-control", placeholder="Email Address")}}
+            {{ form.password1.label() }}
+            {{ form.password1(class="form-control", placeholder="Password")}}
+            {{ form.password2.label() }}
+            {{ form.password2(class="form-control", placeholder="Confim Password")}}
+            <br>
+            {{ form.submit(class="btn btn-md btn-block btn-primary") }}
+
+        </form>
+    </div>
+    
+{% endblock %}

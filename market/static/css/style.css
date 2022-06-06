@@ -1,4 +1,21 @@
-/* body {
+body {
     background-color: #212121 !important;
     color: white !important;
+}
+
+form >label{
+    margin:.5rem 0 ;
+}
+
+.alert{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* .btn-close{
+    border: none;
+    background: transparent;
+    font-weight: bold;
+    font-size: 1.4rem;
+    text-align: center;
 } */
