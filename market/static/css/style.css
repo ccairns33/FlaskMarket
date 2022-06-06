@@ -12,10 +12,8 @@ form >label{
     justify-content: space-between;
     align-items: center;
 }
-/* .btn-close{
-    border: none;
-    background: transparent;
-    font-weight: bold;
-    font-size: 1.4rem;
+.form-options{
+    display: flex;
+    justify-content: space-between;
     text-align: center;
-} */
+}

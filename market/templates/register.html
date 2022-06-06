@@ -20,8 +20,10 @@
             {{ form.password2.label() }}
             {{ form.password2(class="form-control", placeholder="Confim Password")}}
             <br>
-            {{ form.submit(class="btn btn-md btn-block btn-primary") }}
-
+            <div class="form-options">
+                <small>Already have an account? <a href="{{ url_for('login_page') }}">Login!</a></small>
+                {{ form.submit(class="btn btn-md btn-block btn-primary") }}
+            </div>
         </form>
     </div>
     
