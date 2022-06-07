@@ -1,0 +1,80 @@
+<style>
+    .modal-content{
+        color:black
+    }
+</style>
+
+
+  <!-- More Info -->
+  <div class="modal fade" id="Modal-MoreInfo-{{item.id}}"
+       tabindex="-1"
+       aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="ModalLabel">
+            <!-- -->
+           {{ item.name }}
+          </h4>
+          <button type="button" class="close btn-close"
+                  data-dismiss="modal" aria-label="Close">
+          </button>
+        </div>
+        <div class="modal-body">
+            <h5>Description:</h5>
+            
+          {{ item.description }}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary"
+                  data-dismiss="modal">Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Purchase Item-->
+  <div class="modal fade" id="Modal-PurchaseConfirm-{{item.id}}"
+       tabindex="-1"
+       aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="ModalLabel">
+            <!-- -->
+           {{ item.name }}
+          </h4>
+          <button type="button" class="close btn-close"
+                  data-dismiss="modal" aria-label="Close">
+          </button>
+        </div>
+        <div class="modal-body">
+
+            <form method="POST">
+                {{ purchase_form.hidden_tag() }}
+                <h6 class="text-center">
+                    Are you sure you would like to purchase the {{item.name}} for ${{item.price}}?
+                </h6>
+                <small>
+                    By clicking Purchase, you will purchase this item.
+                </small>
+                <br>
+                <br>
+                <div class="modal-footer">
+                    <!-- this input is not displayed, consumed from teh backend in market route -->
+                    <!-- grabbed in market route by request.form.get() -->
+                    <input id="purchase_item" name="purchase_item" type="hidden" value="{{item.name}}">
+                    {{ purchase_form.submit(class="btn btn-outline-success btn-block")}}
+                    <button type="button" class="btn btn-secondary"
+                            data-dismiss="modal">Close
+                    </button>
+                  </div>
+            </form>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
